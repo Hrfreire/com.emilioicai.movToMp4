@@ -106,10 +106,10 @@
         NSArray *compatiblePresets = [AVAssetExportSession exportPresetsCompatibleWithAsset:avAsset];
     
         // Check if video is supported for conversion or not
-        if ([compatiblePresets containsObject:AVAssetExportPresetLowQuality])
+        if ([compatiblePresets containsObject:AVAssetExportPresetPassthrough])
         {
             //Create Export session
-            AVAssetExportSession *exportSession = [[AVAssetExportSession       alloc]initWithAsset:avAsset presetName:AVAssetExportPresetLowQuality];
+            AVAssetExportSession *exportSession = [[AVAssetExportSession       alloc]initWithAsset:avAsset presetName:AVAssetExportPresetPassthrough];
             
             NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@.mp4", inputUrlString]];
             NSLog(@"Exporting to: %@", [NSString stringWithFormat:@"%@.mp4", inputUrlString]);
